@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de OCR</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Comparador de Sistemas OCR</h1>
+        
+        <!-- Formulário de Upload -->
+        <form id="uploadForm">
+            <input type="file" id="imageInput" name="image" accept="image/*" required>
+            <br><br>
+            <button type="button" onclick="processImage('tesseract')">Usar Tesseract</button>
+            <button type="button" onclick="processImage('ocrspace')">Usar OCR Space</button>
+        </form>
+
+        <!-- Áreas de Texto para Exibir os Resultados -->
+        <div class="results">
+            <div class="box">
+                <h3>Tesseract OCR</h3>
+                <textarea id="tesseractResult" rows="10" cols="30" readonly></textarea>
+            </div>
+            <div class="box">
+                <h3>OCR Space</h3>
+                <textarea id="ocrspaceResult" rows="10" cols="30" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/script.js"></script>
+</body>
+</html>
