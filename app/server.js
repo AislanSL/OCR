@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import multer from 'multer';
 import  { performOCR }  from './ocrTesseract.js';
-import { performOCRSpace } from './ocrSpace.js'
+import { performOCRSpace } from './ocrSpace.js';
 
 const app = express();
 const storage = multer.diskStorage({
