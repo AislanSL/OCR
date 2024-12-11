@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import multer from 'multer';
 import  { performOCR }  from './ocrTesseract.js';
 import { performOCRSpace } from './ocrSpace.js';
@@ -9,12 +8,12 @@ const app = express();
 const storage = multer.diskStorage({
     destination: 'uploads/',
     filename: function (req, file, cb) {
-      const ext = path.extname(file.originalname) || '.png'; // Adiciona '.png' se não houver extensão
-      cb(null, file.fieldname + '-' + Date.now() + ext);     // Gera um nome de arquivo único com extensão
+      const ext = path.extname(file.originalname) || '.png'; 
+      cb(null, file.fieldname + '-' + Date.now() + ext);     
     }
   });
   
-  const upload = multer({ storage });
+const upload = multer({ storage });
 
 app.use(express.static('public'));
 
